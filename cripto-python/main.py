@@ -1,4 +1,5 @@
-from algosdk import AlgodClient
+#from algosdk import AlgodClient
+from algosdk.v2client import algod
 import accounts, assets, transfer, contract
 from pyteal import Mode, compileTeal
 
@@ -6,7 +7,8 @@ def create_client():
     algod_token = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
     algod_server = "http://localhost"
     algod_port = 4001
-    algod_client = AlgodClient(algod_token, algod_server, algod_port)
+    algod_client = algod.AlgodClient(algod_token, algod_server, algod_port)
+    #algod_client = AlgodClient(algod_token, algod_server, algod_port)
 
     return algod_client
 
